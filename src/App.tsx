@@ -45,20 +45,20 @@ const App: React.FC = () => {
     {
       image:
         "https://readdy.ai/api/search-image?query=Luxury%20automotive%20components%20arranged%20elegantly%20on%20a%20clean%20white%20surface%2C%20high-end%20car%20parts%20with%20chrome%20and%20carbon%20fiber%20finishes%2C%20professional%20studio%20lighting%2C%20ultra%20high%20resolution%20product%20photography%2C%20minimalist%20background%20with%20soft%20shadows&width=1200&height=600&seq=1&orientation=landscape",
-      title: "Premium European Components",
-      subtitle: "Unmatched quality for discerning automotive enthusiasts",
+      title: translations[language].hero.slides[0].title,
+      subtitle: translations[language].hero.slides[0].subtitle,
     },
     {
       image:
         "https://readdy.ai/api/search-image?query=Close-up%20of%20pristine%20engine%20parts%20and%20luxury%20vehicle%20components%20with%20metallic%20finish%2C%20arranged%20on%20white%20surface%2C%20professional%20product%20photography%20with%20dramatic%20lighting%2C%20automotive%20engineering%20excellence%2C%20minimalist%20clean%20background&width=1200&height=600&seq=2&orientation=landscape",
-      title: "Precision Engineered Parts",
-      subtitle: "Direct from Europe's finest manufacturers",
+      title: translations[language].hero.slides[1].title,
+      subtitle: translations[language].hero.slides[1].subtitle,
     },
     {
       image:
         "https://readdy.ai/api/search-image?query=Luxury%20car%20interior%20components%20and%20dashboard%20elements%20with%20premium%20leather%20and%20carbon%20fiber%20textures%2C%20arranged%20on%20white%20surface%2C%20professional%20automotive%20photography%20with%20perfect%20lighting%2C%20minimalist%20clean%20background&width=1200&height=600&seq=3&orientation=landscape",
-      title: "Luxury Vehicle Solutions",
-      subtitle: "Elevate your automotive experience with UltraMotors",
+      title: translations[language].hero.slides[2].title,
+      subtitle: translations[language].hero.slides[2].subtitle,
     },
   ];
 
@@ -151,6 +151,8 @@ const App: React.FC = () => {
           heroSlides={heroSlides}
           currentSlide={currentSlide}
           setCurrentSlide={setCurrentSlide}
+          translations={translations}
+          language={language}
         />
         <ProductCategories productCategories={productCategories} />
         <NewArrivals newArrivals={newArrivals} />

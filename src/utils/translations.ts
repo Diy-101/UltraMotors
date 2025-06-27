@@ -15,6 +15,7 @@ export interface NavTranslations {
 export interface LanguageTranslations {
   nav: NavTranslations;
   hero: {
+    button: string;
     slides: Slide[];
   };
   // Добавляй другие разделы переводов по необходимости
@@ -23,7 +24,6 @@ export interface LanguageTranslations {
 export interface Translations {
   en: LanguageTranslations;
   ru: LanguageTranslations;
-  // Можно добавить другие языки
 }
 
 export const translations: Translations = {
@@ -35,6 +35,7 @@ export const translations: Translations = {
       contact: "Contact",
     },
     hero: {
+      button: "Explore Collections",
       slides: [
         {
           title: "Special Vehicle Solutions",
@@ -60,6 +61,7 @@ export const translations: Translations = {
       contact: "Контакты",
     },
     hero: {
+      button: "Посмотреть решения",
       slides: [
         {
           title: "Решения для Спецтехники",
@@ -68,13 +70,11 @@ export const translations: Translations = {
         },
         {
           title: "Компоненты для Тяжелой Техники",
-          subtitle:
-            "Высококачественные запчасти для коммерческого транспорта",
+          subtitle: "Высококачественные запчасти для коммерческого транспорта",
         },
         {
           title: "Коммерческие Решения",
-          subtitle:
-            "Полный ассортимент оборудования для грузового транспорта",
+          subtitle: "Полный ассортимент оборудования для грузового транспорта",
         },
       ],
     },

@@ -1,4 +1,6 @@
 import React from "react";
+import type { Translations } from "./utils/translations";
+import type { Language } from "./hooks/useLanguage";
 
 interface Slide {
   image: string;
@@ -10,9 +12,17 @@ interface HeroProps {
   heroSlides: Slide[];
   currentSlide: number;
   setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
+  translations: Translations;
+  language: Language;
 }
 
-const Hero: React.FC<HeroProps> = ({ heroSlides, currentSlide, setCurrentSlide }) => {
+const Hero: React.FC<HeroProps> = ({
+  heroSlides,
+  currentSlide,
+  setCurrentSlide,
+  translations,
+  language,
+}) => {
   return (
     <section className="relative h-[600px] overflow-hidden">
       {heroSlides.map((slide, index) => (
@@ -36,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ heroSlides, currentSlide, setCurrentSlide }
                 </h1>
                 <p className="text-xl text-gray-200 mb-8">{slide.subtitle}</p>
                 <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer">
-                  Explore Collection
+                  {translations[language].hero.button}
                 </button>
               </div>
             </div>
@@ -49,7 +59,9 @@ const Hero: React.FC<HeroProps> = ({ heroSlides, currentSlide, setCurrentSlide }
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-colors duration-300 cursor-pointer ${
-              index === currentSlide ? "bg-amber-500" : "bg-white/50 hover:bg-white"
+              index === currentSlide
+                ? "bg-amber-500"
+                : "bg-white/50 hover:bg-white"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

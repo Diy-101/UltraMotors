@@ -18,10 +18,10 @@ const AboutUs: React.FC = () => {
             </h2>
             <p className="text-gray-600 mb-6">
               Founded in 2010, UltraMotors has established itself as a leading
-              provider of premium European automotive components. Our
-              commitment to excellence and authenticity has made us the trusted
-              choice for automotive enthusiasts and professional mechanics
-              across the globe.
+              provider of premium European automotive components. Our commitment
+              to excellence and authenticity has made us the trusted choice for
+              automotive enthusiasts and professional mechanics across the
+              globe.
             </p>
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
@@ -33,17 +33,23 @@ const AboutUs: React.FC = () => {
                 </div>
                 <div className="flex items-center mb-3">
                   <i className="fas fa-check-circle text-amber-500 mr-2"></i>
-                  <span className="font-medium text-blue-900">Certified Experts</span>
+                  <span className="font-medium text-blue-900">
+                    Certified Experts
+                  </span>
                 </div>
               </div>
               <div>
                 <div className="flex items-center mb-3">
                   <i className="fas fa-check-circle text-amber-500 mr-2"></i>
-                  <span className="font-medium text-blue-900">Global Shipping</span>
+                  <span className="font-medium text-blue-900">
+                    Global Shipping
+                  </span>
                 </div>
                 <div className="flex items-center mb-3">
                   <i className="fas fa-check-circle text-amber-500 mr-2"></i>
-                  <span className="font-medium text-blue-900">Quality Guarantee</span>
+                  <span className="font-medium text-blue-900">
+                    Quality Guarantee
+                  </span>
                 </div>
               </div>
             </div>
