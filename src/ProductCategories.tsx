@@ -1,4 +1,6 @@
 import React from "react";
+import type { Translations } from "./utils/translations";
+import type { Language } from "./hooks/useLanguage";
 
 interface ProductCategory {
   title: string;
@@ -10,7 +12,9 @@ interface ProductCategoriesProps {
   productCategories: ProductCategory[];
 }
 
-const ProductCategories: React.FC<ProductCategoriesProps> = ({ productCategories }) => {
+const ProductCategories: React.FC<ProductCategoriesProps> = ({
+  productCategories,
+}) => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
@@ -47,7 +51,6 @@ const ProductCategories: React.FC<ProductCategoriesProps> = ({ productCategories
                   className="text-amber-500 font-medium hover:text-amber-600 inline-flex items-center cursor-pointer"
                 >
                   View Products
-                  <i className="fas fa-arrow-right ml-2 text-sm"></i>
                 </a>
               </div>
             </div>

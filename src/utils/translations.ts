@@ -18,7 +18,12 @@ export interface LanguageTranslations {
     button: string;
     slides: Slide[];
   };
-  // Добавляй другие разделы переводов по необходимости
+  categories: {
+    title: string;
+    subtitle: string;
+    button: string;
+    slides: Slide[];
+  };
 }
 
 export interface Translations {
@@ -52,6 +57,33 @@ export const translations: Translations = {
         },
       ],
     },
+    categories: {
+      title: "Premium Vehicle Components",
+      subtitle:
+        "Discover our extensive collection of high-quality European automotive components, meticulously sourced to meet the highest standards of performance and luxury",
+      button: "View Products",
+      slides: [
+        {
+          title: "Engine Components",
+          subtitle:
+            "Premium quality engine parts from leading European manufacturers",
+        },
+        {
+          title: "Suspension Systems",
+          subtitle:
+            "Performance-enhancing suspension components for optimal handling",
+        },
+        {
+          title: "Brake Systems",
+          subtitle: "Superior braking solutions for safety and performance",
+        },
+        {
+          title: "Interior Accessories",
+          subtitle:
+            "Luxurious interior components to enhance comfort and aesthetics",
+        },
+      ],
+    },
   },
   ru: {
     nav: {
@@ -75,6 +107,34 @@ export const translations: Translations = {
         {
           title: "Коммерческие Решения",
           subtitle: "Полный ассортимент оборудования для грузового транспорта",
+        },
+      ],
+    },
+    categories: {
+      title: "Премиальные Компоненты",
+      subtitle:
+        "Открой для себя мир Европейских траковых деталей, соответствующих стандартам высокого качества и надежности.",
+      button: "Связаться",
+      slides: [
+        {
+          title: "Моторные Компоненты",
+          subtitle:
+            "Моторные детали с Европейских заводов специально для вашего трака",
+        },
+        {
+          title: "Амортизационная система",
+          subtitle:
+            "Компоненты подвески, повышающие производительность и созданные специально для оптимальной управляемости",
+        },
+        {
+          title: "Тормозная Система",
+          subtitle:
+            "Превосходные тормозные решения для безопасности и производительности",
+        },
+        {
+          title: "Компоненты салона и кузова",
+          subtitle:
+            "Роскошные компоненты интерьера для повышения комфорта и эстетики",
         },
       ],
     },
