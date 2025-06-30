@@ -27,7 +27,7 @@ const BrandShowcase: React.FC<BrandShowcaseProps> = ({
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {brands.map(({ name, logo, url }, index) => (
+          {brands.map(({ name, logo, url }) => (
             <BrandLogo name={name} logo={logo} url={url} />
           ))}
         </div>
