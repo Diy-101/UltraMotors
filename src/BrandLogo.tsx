@@ -1,21 +1,28 @@
 import React from "react";
+import type { Brand } from "./types/brand";
 
-type BrandLogoProps = {
-  logo: React.FC<React.SVGProps<SVGSVGElement>> | string; // либо React-компонент, либо путь к картинке
-  name: string;
-};
-
-export const BrandLogo: React.FC<BrandLogoProps> = ({ logo: Logo, name }) => {
+export const BrandLogo: React.FC<Brand> = ({ logo: Logo, name, url }) => {
   return (
-    <div className="flex flex-col items-center cursor-pointer">
-      {typeof Logo === "string" ? (
-        <img src={Logo} alt={name} className="w-16 h-16 object-contain mb-2" />
-      ) : (
-        <Logo className="w-16 h-16 mb-2 text-gray-800" />
-      )}
-      <span className="text-center text-sm font-medium text-gray-700">
-        {name}
-      </span>
-    </div>
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center py-8 px-6 bg-gray-100 rounded-lg transition-all duration-300 hover:bg-white hover:shadow-lg cursor-pointer"
+    >
+      <div className="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all duration-300">
+        {typeof Logo === "string" ? (
+          <img
+            src={Logo}
+            alt={name}
+            className="w-10 h-10 object-contain text-gray-400"
+          />
+        ) : (
+          <Logo className="w-10 h-10 text-gray-400" />
+        )}
+        <span className="text-xl font-bold text-gray-500 transition-colors duration-300">
+          {name}
+        </span>
+      </div>
+    </a>
   );
 };

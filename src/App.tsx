@@ -13,6 +13,7 @@ import Footer from "./Footer";
 import { useLanguage } from "./hooks/useLanguage";
 import type { Language } from "./hooks/useLanguage";
 import { Truck, BadgeCheck, PackageCheck } from "lucide-react";
+import { brands } from "./data/brands.ts";
 
 const App: React.FC = () => {
   const browserLang = navigator.language.slice(0, 2); // "en", "ru"
@@ -130,18 +131,6 @@ const App: React.FC = () => {
       subtitle: t.keybenefits.slides[2].subtitle,
       icon: PackageCheck,
     },
-  ];
-
-  const brands = [
-    "KAMAZ",
-    "MAN",
-    "Volvo Trucks",
-    "Scania",
-    "DAF",
-    "IVECO",
-    "Caterpillar",
-    "Liebherr",
-    "New",
   ];
 
   return (
