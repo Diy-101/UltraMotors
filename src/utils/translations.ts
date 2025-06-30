@@ -24,6 +24,9 @@ export interface LanguageTranslations {
     button: string;
     slides: Slide[];
   };
+  keybenefits: {
+    slides: Slide[];
+  };
 }
 
 export interface Translations {
@@ -84,6 +87,25 @@ export const translations: Translations = {
         },
       ],
     },
+    keybenefits: {
+      slides: [
+        {
+          title: "Premium Quality",
+          subtitle:
+            "Every component meets or exceeds OEM specifications, ensuring exceptional performance and durability.",
+        },
+        {
+          title: "Authenticity Guaranteed",
+          subtitle:
+            "All our products come with verification certificates and full manufacturer warranties.",
+        },
+        {
+          title: "Express Shipping",
+          subtitle:
+            "Fast and secure worldwide delivery with real-time tracking and insurance included.",
+        },
+      ],
+    },
   },
   ru: {
     nav: {
@@ -135,6 +157,25 @@ export const translations: Translations = {
           title: "Компоненты салона и кузова",
           subtitle:
             "Роскошные компоненты интерьера для повышения комфорта и эстетики",
+        },
+      ],
+    },
+    keybenefits: {
+      slides: [
+        {
+          title: "Надёжные компоненты для тяжёлых условий",
+          subtitle:
+            "Запчасти повышенной прочности, соответствующие или превосходящие OEM-стандарты. Минимум простоев — максимум ресурса даже при экстремальных нагрузках.",
+        },
+        {
+          title: "Гарантированное качество от производителя",
+          subtitle:
+            "Только оригинальные детали с официальной сертификацией. Уверенность в совместимости и надежности каждого узла вашей техники.",
+        },
+        {
+          title: "Мгновенная поставка — без простоев",
+          subtitle:
+            "Экспресс-доставка по России и за рубеж с отслеживанием и страховкой. Сокращайте время простоя и восстанавливайте технику без задержек.",
         },
       ],
     },

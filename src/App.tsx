@@ -12,6 +12,7 @@ import { translations } from "./utils/translations.ts";
 import Footer from "./Footer";
 import { useLanguage } from "./hooks/useLanguage";
 import type { Language } from "./hooks/useLanguage";
+import { Truck, BadgeCheck, PackageCheck } from "lucide-react";
 
 const App: React.FC = () => {
   const browserLang = navigator.language.slice(0, 2); // "en", "ru"
@@ -44,41 +45,41 @@ const App: React.FC = () => {
   const heroSlides = [
     {
       image: "/digger-1867268_1920.jpg",
-      title: translations[language].hero.slides[0].title,
-      subtitle: translations[language].hero.slides[0].subtitle,
+      title: t.hero.slides[0].title,
+      subtitle: t.hero.slides[0].subtitle,
     },
     {
       image: "/zapcasti-avtomobila.jpg",
-      title: translations[language].hero.slides[1].title,
-      subtitle: translations[language].hero.slides[1].subtitle,
+      title: t.hero.slides[1].title,
+      subtitle: t.hero.slides[1].subtitle,
     },
     {
       image: "/raspolozenie-razlicnyh-avtomobil-nyh-aksessuarov.jpg",
-      title: translations[language].hero.slides[2].title,
-      subtitle: translations[language].hero.slides[2].subtitle,
+      title: t.hero.slides[2].title,
+      subtitle: t.hero.slides[2].subtitle,
     },
   ];
 
   const productCategories = [
     {
-      title: translations[language].categories.slides[0].title,
+      title: t.categories.slides[0].title,
       image: "/engine.jpg",
-      description: translations[language].categories.slides[0].subtitle,
+      description: t.categories.slides[0].subtitle,
     },
     {
-      title: translations[language].categories.slides[1].title,
+      title: t.categories.slides[1].title,
       image: "/suspension.jpg",
-      description: translations[language].categories.slides[1].subtitle,
+      description: t.categories.slides[1].subtitle,
     },
     {
-      title: translations[language].categories.slides[2].title,
+      title: t.categories.slides[2].title,
       image: "/break.jpg",
-      description: translations[language].categories.slides[2].subtitle,
+      description: t.categories.slides[2].subtitle,
     },
     {
-      title: translations[language].categories.slides[3].title,
+      title: t.categories.slides[3].title,
       image: "/interior.jpg",
-      description: translations[language].categories.slides[3].subtitle,
+      description: t.categories.slides[3].subtitle,
     },
   ];
 
@@ -113,6 +114,24 @@ const App: React.FC = () => {
     },
   ];
 
+  const keybenefits = [
+    {
+      title: t.keybenefits.slides[0].title,
+      subtitle: t.keybenefits.slides[0].subtitle,
+      icon: Truck,
+    },
+    {
+      title: t.keybenefits.slides[1].title,
+      subtitle: t.keybenefits.slides[1].subtitle,
+      icon: BadgeCheck,
+    },
+    {
+      title: t.keybenefits.slides[2].title,
+      subtitle: t.keybenefits.slides[2].subtitle,
+      icon: PackageCheck,
+    },
+  ];
+
   const brands = [
     "KAMAZ",
     "MAN",
@@ -122,6 +141,7 @@ const App: React.FC = () => {
     "IVECO",
     "Caterpillar",
     "Liebherr",
+    "New",
   ];
 
   return (
@@ -151,7 +171,7 @@ const App: React.FC = () => {
           productCategories={productCategories}
         />
         <NewArrivals newArrivals={newArrivals} />
-        <KeyBenefits />
+        <KeyBenefits benefitSlides={keybenefits} />
         <BrandShowcase brands={brands} />
         <AboutUs />
         <CallToAction />
