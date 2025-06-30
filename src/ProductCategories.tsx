@@ -1,6 +1,4 @@
 import React from "react";
-import type { Translations } from "./utils/translations";
-import type { Language } from "./hooks/useLanguage";
 
 interface ProductCategory {
   title: string;
@@ -9,24 +7,24 @@ interface ProductCategory {
 }
 
 interface ProductCategoriesProps {
+  title: string;
+  subtitle: string;
+  button: string;
   productCategories: ProductCategory[];
 }
 
 const ProductCategories: React.FC<ProductCategoriesProps> = ({
+  title,
+  subtitle,
+  button,
   productCategories,
 }) => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-blue-900 mb-4">
-            Premium Vehicle Components
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our extensive collection of high-quality European
-            automotive components, meticulously sourced to meet the highest
-            standards of performance and luxury.
-          </p>
+          <h2 className="text-3xl font-bold text-blue-900 mb-4">{title}</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">{subtitle}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {productCategories.map((category, index) => (
@@ -50,7 +48,7 @@ const ProductCategories: React.FC<ProductCategoriesProps> = ({
                   href="#"
                   className="text-amber-500 font-medium hover:text-amber-600 inline-flex items-center cursor-pointer"
                 >
-                  View Products
+                  {button}
                 </a>
               </div>
             </div>

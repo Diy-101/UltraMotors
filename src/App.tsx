@@ -43,20 +43,17 @@ const App: React.FC = () => {
 
   const heroSlides = [
     {
-      image:
-        "https://readdy.ai/api/search-image?query=Luxury%20automotive%20components%20arranged%20elegantly%20on%20a%20clean%20white%20surface%2C%20high-end%20car%20parts%20with%20chrome%20and%20carbon%20fiber%20finishes%2C%20professional%20studio%20lighting%2C%20ultra%20high%20resolution%20product%20photography%2C%20minimalist%20background%20with%20soft%20shadows&width=1200&height=600&seq=1&orientation=landscape",
+      image: "/digger-1867268_1920.jpg",
       title: translations[language].hero.slides[0].title,
       subtitle: translations[language].hero.slides[0].subtitle,
     },
     {
-      image:
-        "https://readdy.ai/api/search-image?query=Close-up%20of%20pristine%20engine%20parts%20and%20luxury%20vehicle%20components%20with%20metallic%20finish%2C%20arranged%20on%20white%20surface%2C%20professional%20product%20photography%20with%20dramatic%20lighting%2C%20automotive%20engineering%20excellence%2C%20minimalist%20clean%20background&width=1200&height=600&seq=2&orientation=landscape",
+      image: "/zapcasti-avtomobila.jpg",
       title: translations[language].hero.slides[1].title,
       subtitle: translations[language].hero.slides[1].subtitle,
     },
     {
-      image:
-        "https://readdy.ai/api/search-image?query=Luxury%20car%20interior%20components%20and%20dashboard%20elements%20with%20premium%20leather%20and%20carbon%20fiber%20textures%2C%20arranged%20on%20white%20surface%2C%20professional%20automotive%20photography%20with%20perfect%20lighting%2C%20minimalist%20clean%20background&width=1200&height=600&seq=3&orientation=landscape",
+      image: "/raspolozenie-razlicnyh-avtomobil-nyh-aksessuarov.jpg",
       title: translations[language].hero.slides[2].title,
       subtitle: translations[language].hero.slides[2].subtitle,
     },
@@ -64,31 +61,28 @@ const App: React.FC = () => {
 
   const productCategories = [
     {
-      title: "Engine Components",
+      title: translations[language].categories.slides[0].title,
       image:
         "https://readdy.ai/api/search-image?query=High-performance%20engine%20components%20and%20parts%20arranged%20elegantly%2C%20pistons%2C%20valves%20and%20camshafts%20with%20metallic%20finish%2C%20professional%20product%20photography%20on%20white%20background%20with%20soft%20shadows%2C%20automotive%20engineering%20excellence&width=400&height=300&seq=4&orientation=landscape",
-      description:
-        "Premium quality engine parts from leading European manufacturers",
+      description: translations[language].categories.slides[0].subtitle,
     },
     {
-      title: "Suspension Systems",
+      title: translations[language].categories.slides[1].title,
       image:
         "https://readdy.ai/api/search-image?query=Luxury%20car%20suspension%20components%20and%20shock%20absorbers%20with%20chrome%20finish%2C%20arranged%20professionally%20on%20white%20surface%2C%20high-end%20automotive%20parts%20photography%20with%20perfect%20lighting%2C%20minimalist%20clean%20background&width=400&height=300&seq=5&orientation=landscape",
-      description:
-        "Performance-enhancing suspension components for optimal handling",
+      description: translations[language].categories.slides[1].subtitle,
     },
     {
-      title: "Brake Systems",
+      title: translations[language].categories.slides[2].title,
       image:
         "https://readdy.ai/api/search-image?query=Premium%20brake%20discs%2C%20calipers%20and%20brake%20pads%20with%20metallic%20finish%2C%20arranged%20professionally%20on%20white%20surface%2C%20high-end%20automotive%20parts%20photography%20with%20dramatic%20lighting%2C%20minimalist%20clean%20background&width=400&height=300&seq=6&orientation=landscape",
-      description: "Superior braking solutions for safety and performance",
+      description: translations[language].categories.slides[2].subtitle,
     },
     {
-      title: "Interior Accessories",
+      title: translations[language].categories.slides[3].title,
       image:
         "https://readdy.ai/api/search-image?query=Luxury%20automotive%20interior%20accessories%20including%20leather-wrapped%20steering%20wheels%2C%20carbon%20fiber%20trim%20pieces%20and%20premium%20control%20knobs%2C%20arranged%20on%20white%20surface%2C%20professional%20product%20photography%20with%20perfect%20lighting%2C%20minimalist%20clean%20background&width=400&height=300&seq=7&orientation=landscape",
-      description:
-        "Luxurious interior components to enhance comfort and aesthetics",
+      description: translations[language].categories.slides[3].subtitle,
     },
   ];
 
@@ -154,7 +148,12 @@ const App: React.FC = () => {
           translations={translations}
           language={language}
         />
-        <ProductCategories productCategories={productCategories} />
+        <ProductCategories
+          title={translations[language].categories.title}
+          subtitle={translations[language].categories.subtitle}
+          button={translations[language].categories.button}
+          productCategories={productCategories}
+        />
         <NewArrivals newArrivals={newArrivals} />
         <KeyBenefits />
         <BrandShowcase brands={brands} />
