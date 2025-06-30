@@ -62,26 +62,22 @@ const App: React.FC = () => {
   const productCategories = [
     {
       title: translations[language].categories.slides[0].title,
-      image:
-        "https://readdy.ai/api/search-image?query=High-performance%20engine%20components%20and%20parts%20arranged%20elegantly%2C%20pistons%2C%20valves%20and%20camshafts%20with%20metallic%20finish%2C%20professional%20product%20photography%20on%20white%20background%20with%20soft%20shadows%2C%20automotive%20engineering%20excellence&width=400&height=300&seq=4&orientation=landscape",
+      image: "/engine.jpg",
       description: translations[language].categories.slides[0].subtitle,
     },
     {
       title: translations[language].categories.slides[1].title,
-      image:
-        "https://readdy.ai/api/search-image?query=Luxury%20car%20suspension%20components%20and%20shock%20absorbers%20with%20chrome%20finish%2C%20arranged%20professionally%20on%20white%20surface%2C%20high-end%20automotive%20parts%20photography%20with%20perfect%20lighting%2C%20minimalist%20clean%20background&width=400&height=300&seq=5&orientation=landscape",
+      image: "/suspension.jpg",
       description: translations[language].categories.slides[1].subtitle,
     },
     {
       title: translations[language].categories.slides[2].title,
-      image:
-        "https://readdy.ai/api/search-image?query=Premium%20brake%20discs%2C%20calipers%20and%20brake%20pads%20with%20metallic%20finish%2C%20arranged%20professionally%20on%20white%20surface%2C%20high-end%20automotive%20parts%20photography%20with%20dramatic%20lighting%2C%20minimalist%20clean%20background&width=400&height=300&seq=6&orientation=landscape",
+      image: "/break.jpg",
       description: translations[language].categories.slides[2].subtitle,
     },
     {
       title: translations[language].categories.slides[3].title,
-      image:
-        "https://readdy.ai/api/search-image?query=Luxury%20automotive%20interior%20accessories%20including%20leather-wrapped%20steering%20wheels%2C%20carbon%20fiber%20trim%20pieces%20and%20premium%20control%20knobs%2C%20arranged%20on%20white%20surface%2C%20professional%20product%20photography%20with%20perfect%20lighting%2C%20minimalist%20clean%20background&width=400&height=300&seq=7&orientation=landscape",
+      image: "/interior.jpg",
       description: translations[language].categories.slides[3].subtitle,
     },
   ];

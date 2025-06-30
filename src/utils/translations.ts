@@ -58,7 +58,7 @@ export const translations: Translations = {
       ],
     },
     categories: {
-      title: "Premium Vehicle Components",
+      title: "Premium vehicle components for trucks",
       subtitle:
         "Discover our extensive collection of high-quality European automotive components, meticulously sourced to meet the highest standards of performance and luxury",
       button: "View Products",
@@ -111,7 +111,7 @@ export const translations: Translations = {
       ],
     },
     categories: {
-      title: "Премиальные Компоненты",
+      title: "Премиальные Компоненты для спецтехники и траков",
       subtitle:
         "Открой для себя мир Европейских траковых деталей, соответствующих высоким стандартам качества и надежности.",
       button: "Связаться",
