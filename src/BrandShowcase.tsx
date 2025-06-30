@@ -28,12 +28,7 @@ const BrandShowcase: React.FC<BrandShowcaseProps> = ({
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {brands.map(({ name, logo, url }, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center py-8 px-6 bg-gray-100 rounded-lg transition-all duration-300 hover:bg-white hover:shadow-lg cursor-pointer"
-            >
-              <BrandLogo name={name} logo={logo} url={url} />
-            </div>
+            <BrandLogo name={name} logo={logo} url={url} />
           ))}
         </div>
       </div>
