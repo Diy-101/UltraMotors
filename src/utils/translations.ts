@@ -27,6 +27,10 @@ export interface LanguageTranslations {
   keybenefits: {
     slides: Slide[];
   };
+  brands: {
+    title: string;
+    subtitle: string;
+  };
 }
 
 export interface Translations {
@@ -106,6 +110,11 @@ export const translations: Translations = {
         },
       ],
     },
+    brands: {
+      title: "Trusted by Leading Brands",
+      subtitle:
+        "We partner with Europe's most prestigious automotive manufacturers to bring you authentic, high-performance components.",
+    },
   },
   ru: {
     nav: {
@@ -178,6 +187,11 @@ export const translations: Translations = {
             "Экспресс-доставка по России и за рубеж с отслеживанием и страховкой. Сокращайте время простоя и восстанавливайте технику без задержек.",
         },
       ],
+    },
+    brands: {
+      title: "Нам доверяют ведущие бренды",
+      subtitle:
+        "Мы сотрудничаем с крупнейшими мировыми и российскими производителями спецтехники и грузовых автомобилей, чтобы поставлять оригинальные и высокоэффективные комплектующие.",
     },
   },
 };

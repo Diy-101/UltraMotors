@@ -172,7 +172,11 @@ const App: React.FC = () => {
         />
         <NewArrivals newArrivals={newArrivals} />
         <KeyBenefits benefitSlides={keybenefits} />
-        <BrandShowcase brands={brands} />
+        <BrandShowcase
+          brands={brands}
+          translations={translations}
+          language={language}
+        />
         <AboutUs />
         <CallToAction />
         <ContactForm />
