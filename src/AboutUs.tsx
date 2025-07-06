@@ -14,7 +14,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ language, translations }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="https://readdy.ai/api/search-image?query=Modern%20luxury%20automotive%20workshop%20interior%20with%20professional%20mechanics%20working%20on%20high-end%20European%20vehicles%2C%20clean%20and%20organized%20space%20with%20premium%20tools%20and%20equipment%2C%20dramatic%20lighting%20with%20natural%20ambiance%2C%20high-end%20professional%20environment&width=600&height=400&seq=13&orientation=landscape"
+              src="/about_us.jpg"
               alt="About UltraMotors"
               className="rounded-lg shadow-xl w-full h-[400px] object-cover object-top"
             />
