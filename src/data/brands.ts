@@ -23,42 +23,42 @@ export const brands: Brand[] = [
   {
     name: "Volvo",
     logo: VolvoLogo,
-    url: "https://volvo.com",
+    url: "https://www.volvocars.com/nl/",
   },
   {
     name: "Caterpillar",
     logo: CaterpillarLogo,
-    url: "https://kamaz.ru",
+    url: "https://www.caterpillar.com/ru.html",
   },
   {
     name: "Man",
     logo: ManLogo,
-    url: "https://volvo.com",
+    url: "https://www.man.eu/corporate/en/homepage.html",
   },
   {
     name: "Liebherr",
     logo: LiebherrLogo,
-    url: "https://kamaz.ru",
+    url: "https://www.liebherr.com/en-us/mining-equipment/equipment/mining-trucks/mining-trucks-4707146",
   },
   {
     name: "Scania",
     logo: ScaniaLogo,
-    url: "https://volvo.com",
+    url: "https://www.scania.com/",
   },
   {
     name: "Ponsse",
     logo: PonsseLogo,
-    url: "https://kamaz.ru",
+    url: "https://www.ponsse.com/ru/",
   },
   {
     name: "BPW",
     logo: BPWLogo,
-    url: "https://kamaz.ru",
+    url: "https://www.bpw.de/en/",
   },
   {
     name: "Fuchs",
     logo: FuchsLogo,
-    url: "https://volvo.com",
+    url: "https://www.fuchs.com",
   },
   {
     name: "Gigant",
@@ -68,21 +68,21 @@ export const brands: Brand[] = [
   {
     name: "Hitachi",
     logo: HitachiLogo,
-    url: "https://volvo.com",
+    url: "https://www.hitachi.com",
   },
   {
     name: "Komatsu",
     logo: KomatsuLogo,
-    url: "https://kamaz.ru",
+    url: "https://www.komatsu.ru/",
   },
   {
     name: "Mercedes-Benz",
     logo: MercedesLogo,
-    url: "https://volvo.com",
+    url: "https://www.mercedes-benz.com/en/",
   },
   {
     name: "Terex",
     logo: TerexLogo,
-    url: "https://kamaz.ru",
+    url: "https://www.terex.com",
   },
 ];
