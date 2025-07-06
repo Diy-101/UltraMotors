@@ -31,6 +31,12 @@ export interface LanguageTranslations {
     title: string;
     subtitle: string;
   };
+  callToAction: {
+    title: string;
+    subtitle: string;
+    buttonOne: string;
+    buttonTwo: string;
+  };
 }
 
 export interface Translations {
@@ -115,6 +121,13 @@ export const translations: Translations = {
       subtitle:
         "We partner with Europe's most prestigious automotive manufacturers to bring you authentic, high-performance components.",
     },
+    callToAction: {
+      title: "European Quality Standards",
+      subtitle:
+        "Experience the difference that European engineering excellence makes. Our components are sourced directly from the same manufacturers that supply Europe's most prestigious automotive brands.",
+      buttonOne: "Request Quote",
+      buttonTwo: "Contact Sales",
+    },
   },
   ru: {
     nav: {
@@ -192,6 +205,13 @@ export const translations: Translations = {
       title: "Работаем с широким спектром марок грузовиков и спецтехники",
       subtitle:
         "Мы сотрудничаем с крупнейшими мировыми и российскими производителями спецтехники и грузовых автомобилей, чтобы поставлять оригинальные и высокоэффективные комплектующие.",
+    },
+    callToAction: {
+      title: "Европейские стандарты качества",
+      subtitle:
+        "Почувствуйте разницу, которую приносит европейское инженерное мастерство. Наши компоненты поставляются напрямую от тех же производителей, которые снабжают самые престижные автомобильные бренды Европы.",
+      buttonOne: "Запросить цену",
+      buttonTwo: "Связаться",
     },
   },
 };

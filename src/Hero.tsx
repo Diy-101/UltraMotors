@@ -1,12 +1,7 @@
 import React from "react";
 import type { Translations } from "./utils/translations";
 import type { Language } from "./hooks/useLanguage";
-
-interface Slide {
-  image: string;
-  title: string;
-  subtitle: string;
-}
+import type { Slide } from "./types/slide";
 
 interface HeroProps {
   heroSlides: Slide[];
