@@ -7,18 +7,36 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Node.js / Frontend
+node_modules/
+dist/
+dist-ssr/
 *.local
+.env
+
+# Python / Backend
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/venv/
+backend/.env
 
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Docker-related (если хочешь исключить)
+*.dockerignore
+Dockerfile
+docker-compose.override.yml
+
+# Temporary files
+*.tmp
+*.swp
