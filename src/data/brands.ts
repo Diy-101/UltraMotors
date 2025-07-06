@@ -63,7 +63,7 @@ export const brands: Brand[] = [
   {
     name: "Gigant",
     logo: GigantLogo,
-    url: "https://kamaz.ru",
+    url: "https://www.komatsu.ru/",
   },
   {
     name: "Hitachi",
