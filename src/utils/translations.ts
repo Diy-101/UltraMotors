@@ -1,5 +1,9 @@
 // utils/translations.ts
 
+interface Quality {
+  quality: string;
+}
+
 export interface Slide {
   title: string;
   subtitle: string;
@@ -36,6 +40,13 @@ export interface LanguageTranslations {
     subtitle: string;
     buttonOne: string;
     buttonTwo: string;
+  };
+  aboutUs: {
+    title: string;
+    subtitle: string;
+    buttonOne: string;
+    buttonTwo: string;
+    qualities: Quality[];
   };
 }
 
@@ -128,6 +139,27 @@ export const translations: Translations = {
       buttonOne: "Request Quote",
       buttonTwo: "Contact Sales",
     },
+    aboutUs: {
+      title: "About UltraMotors",
+      subtitle:
+        "Founded in 2010, UltraMotors has established itself as a leading provider of premium European automotive components. Our commitment to excellence and authenticity has made us the trusted choice for automotive enthusiasts and professional mechanics across the globe.",
+      buttonOne: "Learn More",
+      buttonTwo: "Contact Us",
+      qualities: [
+        {
+          quality: "15+ Years Experience",
+        },
+        {
+          quality: "Certified Experts",
+        },
+        {
+          quality: "Global Shipping",
+        },
+        {
+          quality: "Quality Guarantee",
+        },
+      ],
+    },
   },
   ru: {
     nav: {
@@ -212,6 +244,27 @@ export const translations: Translations = {
         "Почувствуйте разницу, которую приносит европейское инженерное мастерство. Наши компоненты поставляются напрямую от тех же производителей, которые снабжают самые престижные автомобильные бренды Европы.",
       buttonOne: "Запросить цену",
       buttonTwo: "Связаться",
+    },
+    aboutUs: {
+      title: "О компании UltraMotors",
+      subtitle:
+        "Основанная в 2010 году, компания UltraMotors зарекомендовала себя как ведущий поставщик премиальных европейских автокомпонентов. Наша приверженность качеству и подлинности сделала нас надёжным выбором как для автолюбителей, так и для профессиональных механиков по всему миру.",
+      buttonOne: "Узнать больше",
+      buttonTwo: "Связаться",
+      qualities: [
+        {
+          quality: "15 лет опыта",
+        },
+        {
+          quality: "Сертифицированные специалисты",
+        },
+        {
+          quality: "Доставка по всему миру",
+        },
+        {
+          quality: "Гарантия качества",
+        },
+      ],
     },
   },
 };

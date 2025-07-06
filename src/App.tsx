@@ -166,7 +166,7 @@ const App: React.FC = () => {
           translations={translations}
           language={language}
         />
-        <AboutUs />
+        <AboutUs language={language} translations={translations} />
         <CallToAction language={language} translations={translations} />
         <ContactForm />
       </main>
