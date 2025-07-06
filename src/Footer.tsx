@@ -61,15 +61,15 @@ const Footer: React.FC<FooterProps> = ({ language, translations }) => {
               {[
                 {
                   translation: translations[language].footer.quickLinks.catalog,
-                  href: "#",
+                  href: "#categories",
                 },
                 {
                   translation: translations[language].footer.quickLinks.about,
-                  href: "#",
+                  href: "#about",
                 },
                 {
                   translation: translations[language].footer.quickLinks.offers,
-                  href: "#",
+                  href: "#arrivals",
                 },
                 {
                   translation: translations[language].footer.quickLinks.policy,

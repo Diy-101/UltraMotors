@@ -39,10 +39,16 @@ const AboutUs: React.FC<AboutUsProps> = ({ language, translations }) => {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer">
+              <button
+                onClick={() => (window.location.href = "#contact")}
+                className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer"
+              >
                 {translations[language].aboutUs.buttonOne}
               </button>
-              <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer">
+              <button
+                onClick={() => (window.location.href = "#contact")}
+                className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer"
+              >
                 {translations[language].aboutUs.buttonTwo}
               </button>
             </div>

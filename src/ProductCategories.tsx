@@ -45,7 +45,7 @@ const ProductCategories: React.FC<ProductCategoriesProps> = ({
                 </h3>
                 <p className="text-gray-600 mb-4">{category.description}</p>
                 <a
-                  href="#"
+                  href="#contact"
                   className="text-amber-500 font-medium hover:text-amber-600 inline-flex items-center cursor-pointer"
                 >
                   {button}

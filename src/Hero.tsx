@@ -40,9 +40,12 @@ const Hero: React.FC<HeroProps> = ({
                   {slide.title}
                 </h1>
                 <p className="text-xl text-gray-200 mb-8">{slide.subtitle}</p>
-                <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer">
+                <a
+                  href="#contact"
+                  className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer"
+                >
                   {translations[language].hero.button}
-                </button>
+                </a>
               </div>
             </div>
           </div>

@@ -26,10 +26,16 @@ const CallToAction: React.FC<CallProps> = ({ language, translations }) => {
             {translations[language].callToAction.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer">
+            <button
+              onClick={() => (window.location.href = "#contact")}
+              className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer"
+            >
               {translations[language].callToAction.buttonOne}
             </button>
-            <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer">
+            <button
+              onClick={() => (window.location.href = "#contact")}
+              className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer"
+            >
               {translations[language].callToAction.buttonTwo}
             </button>
           </div>

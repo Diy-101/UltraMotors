@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
               {translations[language].nav.home}
             </a>
             <a
-              href="#"
+              href="#categories"
               className="text-blue-900 font-medium hover:text-amber-500 transition-colors"
             >
               {translations[language].nav.products}
