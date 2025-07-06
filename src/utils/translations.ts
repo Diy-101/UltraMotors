@@ -48,6 +48,33 @@ export interface LanguageTranslations {
     buttonTwo: string;
     qualities: Quality[];
   };
+  contactForm: {
+    title: string;
+    subtitle: string;
+    leftSide: {
+      firstName: string;
+      placeholderFN: string;
+      lastName: string;
+      placeholderLN: string;
+      email: string;
+      placeholderEmail: string;
+      phoneNumber: string;
+      placeholderPN: string;
+      message: string;
+      placeholderMessage: string;
+      sendButton: string;
+    };
+    rightSide: {
+      titlelocation: string;
+      firstPartLocation: string;
+      secondPartLoaction: string;
+      contactInfo: string;
+      workingHours: string;
+      connect: string;
+      phone: string;
+      ourEmail: string;
+    };
+  };
 }
 
 export interface Translations {
@@ -160,6 +187,34 @@ export const translations: Translations = {
         },
       ],
     },
+    contactForm: {
+      title: "Get in Touch",
+      subtitle:
+        "We're here to help with any questions about our premium automotive components. Fill out the form below and we'll get back to you shortly.",
+      leftSide: {
+        firstName: "First Name",
+        lastName: "Last Name",
+        email: "Email Address",
+        phoneNumber: "Phone Number",
+        message: "Message",
+        placeholderFN: "Enter your first name",
+        placeholderLN: "Enter your last name",
+        placeholderEmail: "Enter your email",
+        placeholderPN: "Enter your phone number",
+        placeholderMessage: "How can we help you?",
+        sendButton: "Submit",
+      },
+      rightSide: {
+        titlelocation: "Our Location",
+        firstPartLocation: "Str. Marshala Govorova, house 37, lit. A",
+        secondPartLoaction: "St. Petersburg, Russia, 198095",
+        contactInfo: "Contact Information",
+        workingHours: "Mon-Fri: 9.00 — 19.00",
+        phone: "+7 965 004 84-38",
+        ourEmail: "6801782@mail.ru",
+        connect: "Connect With Us",
+      },
+    },
   },
   ru: {
     nav: {
@@ -265,6 +320,34 @@ export const translations: Translations = {
           quality: "Гарантия качества",
         },
       ],
+    },
+    contactForm: {
+      title: "Свяжитесь с нами",
+      subtitle:
+        "Мы готовы помочь с любыми вопросами о наших премиальных автокомпонентах. Заполните форму ниже — и мы свяжемся с вами в ближайшее время.",
+      leftSide: {
+        firstName: "Имя",
+        lastName: "Фамилия",
+        email: "Электронная почта",
+        phoneNumber: "Номер телефона",
+        message: "Сообщение",
+        placeholderFN: "Введите ваше имя",
+        placeholderLN: "Введите вашу фамилию",
+        placeholderEmail: "Введите вашу почту",
+        placeholderPN: "Введите номер телефона",
+        placeholderMessage: "Чем мы можем помочь?",
+        sendButton: "Отправить",
+      },
+      rightSide: {
+        titlelocation: "Наш адрес",
+        firstPartLocation: "ул. Маршала Говорова, дом 37, лит. А",
+        secondPartLoaction: "Санкт-Петербург, Россия, 198095",
+        contactInfo: "Контактная информация",
+        workingHours: "Пн–Пт: 9:00 — 19:00",
+        phone: "+7 965 004 84-38",
+        ourEmail: "6801782@mail.ru",
+        connect: "Мы в соцсетях",
+      },
     },
   },
 };

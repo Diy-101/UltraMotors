@@ -1,19 +1,33 @@
 import React from "react";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import type { Translations } from "./utils/translations";
+import type { Language } from "./hooks/useLanguage";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
-const ContactForm: React.FC = () => {
+interface ContactProps {
+  translations: Translations;
+  language: Language;
+}
+
+const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-blue-900 mb-4">
-              Get in Touch
+              {translations[language].contactForm.title}
             </h2>
             <p className="text-gray-600">
-              We're here to help with any questions about our premium automotive
-              components. Fill out the form below and we'll get back to you
-              shortly.
+              {translations[language].contactForm.subtitle}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -25,14 +39,17 @@ const ContactForm: React.FC = () => {
                       className="block text-sm font-medium text-gray-700 mb-2"
                       htmlFor="firstName"
                     >
-                      First Name
+                      {translations[language].contactForm.leftSide.firstName}
                     </label>
                     <input
                       type="text"
                       id="firstName"
                       name="firstName"
                       required
-                      placeholder="Enter your first name"
+                      placeholder={
+                        translations[language].contactForm.leftSide
+                          .placeholderFN
+                      }
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
                     />
                   </div>
@@ -41,14 +58,17 @@ const ContactForm: React.FC = () => {
                       className="block text-sm font-medium text-gray-700 mb-2"
                       htmlFor="lastName"
                     >
-                      Last Name
+                      {translations[language].contactForm.leftSide.lastName}
                     </label>
                     <input
                       type="text"
                       id="lastName"
                       name="lastName"
                       required
-                      placeholder="Enter your last name"
+                      placeholder={
+                        translations[language].contactForm.leftSide
+                          .placeholderLN
+                      }
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
                     />
                   </div>
@@ -58,14 +78,17 @@ const ContactForm: React.FC = () => {
                     className="block text-sm font-medium text-gray-700 mb-2"
                     htmlFor="email"
                   >
-                    Email Address
+                    {translations[language].contactForm.leftSide.email}
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
-                    placeholder="Enter your email"
+                    placeholder={
+                      translations[language].contactForm.leftSide
+                        .placeholderEmail
+                    }
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
                   />
                 </div>
@@ -74,14 +97,16 @@ const ContactForm: React.FC = () => {
                     className="block text-sm font-medium text-gray-700 mb-2"
                     htmlFor="phone"
                   >
-                    Phone Number
+                    {translations[language].contactForm.leftSide.phoneNumber}
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
                     required
-                    placeholder="Enter your phone number"
+                    placeholder={
+                      translations[language].contactForm.leftSide.placeholderPN
+                    }
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
                   />
                 </div>
@@ -90,14 +115,17 @@ const ContactForm: React.FC = () => {
                     className="block text-sm font-medium text-gray-700 mb-2"
                     htmlFor="message"
                   >
-                    Message
+                    {translations[language].contactForm.leftSide.message}
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     required
                     rows={4}
-                    placeholder="How can we help you?"
+                    placeholder={
+                      translations[language].contactForm.leftSide
+                        .placeholderMessage
+                    }
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm resize-none"
                   ></textarea>
                 </div>
@@ -105,47 +133,66 @@ const ContactForm: React.FC = () => {
                   type="submit"
                   className="w-full bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300 !rounded-button"
                 >
-                  Send Message
+                  {translations[language].contactForm.leftSide.sendButton}
                 </button>
               </form>
             </div>
             <div className="space-y-8">
               <div>
                 <h3 className="text-xl font-bold text-blue-900 mb-4">
-                  Our Location
+                  {translations[language].contactForm.rightSide.titlelocation}
                 </h3>
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                   <div className="flex items-start space-x-4">
-                    <i className="fas fa-map-marker-alt text-amber-500 mt-1"></i>
+                    <MapPin className="text-amber-500 mt-1 w-5 h-5" />
                     <div>
-                      <p className="text-gray-600">123 Luxury Lane</p>
-                      <p className="text-gray-600">Munich, Germany</p>
+                      <p className="text-gray-600">
+                        {
+                          translations[language].contactForm.rightSide
+                            .firstPartLocation
+                        }
+                      </p>
+                      <p className="text-gray-600">
+                        {
+                          translations[language].contactForm.rightSide
+                            .secondPartLoaction
+                        }
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
               <div>
                 <h3 className="text-xl font-bold text-blue-900 mb-4">
-                  Contact Information
+                  {translations[language].contactForm.rightSide.contactInfo}
                 </h3>
                 <div className="bg-white p-6 rounded-lg shadow-lg space-y-4">
                   <div className="flex items-center space-x-4">
-                    <i className="fas fa-phone-alt text-amber-500"></i>
-                    <p className="text-gray-600">+49 123 456 7890</p>
+                    <Phone className="text-amber-500 w-5 h-5" />
+                    <p className="text-gray-600">
+                      {translations[language].contactForm.rightSide.phone}
+                    </p>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <i className="fas fa-envelope text-amber-500"></i>
-                    <p className="text-gray-600">info@ultramotors.com</p>
+                    <Mail className="text-amber-500 w-5 h-5" />
+                    <p className="text-gray-600">
+                      {translations[language].contactForm.rightSide.ourEmail}
+                    </p>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <i className="fas fa-clock text-amber-500"></i>
-                    <p className="text-gray-600">Mon-Fri: 9AM - 6PM</p>
+                    <Clock className="text-amber-500 w-5 h-5" />
+                    <p className="text-gray-600">
+                      {
+                        translations[language].contactForm.rightSide
+                          .workingHours
+                      }
+                    </p>
                   </div>
                 </div>
               </div>
               <div>
                 <h3 className="text-xl font-bold text-blue-900 mb-4">
-                  Connect With Us
+                  {translations[language].contactForm.rightSide.connect}
                 </h3>
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                   <div className="flex justify-between px-6">
