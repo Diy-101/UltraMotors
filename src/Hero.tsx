@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({
   language,
 }) => {
   return (
-    <section className="relative h-[600px] overflow-hidden">
+    <section id="hero" className="relative h-[600px] overflow-hidden">
       {heroSlides.map((slide, index) => (
         <div
           key={index}

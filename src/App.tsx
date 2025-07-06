@@ -159,7 +159,11 @@ const App: React.FC = () => {
           button={translations[language].categories.button}
           productCategories={productCategories}
         />
-        <NewArrivals newArrivals={newArrivals} />
+        <NewArrivals
+          newArrivals={newArrivals}
+          translation={translations}
+          language={language}
+        />
         <KeyBenefits benefitSlides={keybenefits} />
         <BrandShowcase
           brands={brands}
@@ -170,7 +174,7 @@ const App: React.FC = () => {
         <CallToAction language={language} translations={translations} />
         <ContactForm language={language} translations={translations} />
       </main>
-      <Footer />
+      <Footer language={language} translations={translations} />
     </div>
   );
 };

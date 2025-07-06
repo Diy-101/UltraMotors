@@ -12,7 +12,7 @@ interface BenefitsProps {
 
 const KeyBenefits: React.FC<BenefitsProps> = ({ benefitSlides }) => {
   return (
-    <section className="py-16 bg-blue-900 text-white">
+    <section id="benefits" className="py-16 bg-blue-900 text-white">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {benefitSlides.map((slides) => {

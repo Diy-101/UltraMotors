@@ -10,6 +10,7 @@ interface CallProps {
 const CallToAction: React.FC<CallProps> = ({ language, translations }) => {
   return (
     <section
+      id="callToAction"
       className="relative py-24 bg-fixed bg-center bg-cover"
       style={{
         backgroundImage: "url('/trucks.jpg')",

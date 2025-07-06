@@ -1,27 +1,31 @@
 import React from "react";
-
-interface NewArrival {
-  title: string;
-  image: string;
-  price: string;
-  availability: string;
-}
+import type { Arrival } from "./types/arrival";
+import type { Translations } from "./utils/translations";
+import type { Language } from "./hooks/useLanguage";
 
 interface NewArrivalsProps {
-  newArrivals: NewArrival[];
+  newArrivals: Arrival[];
+  translation: Translations;
+  language: Language;
 }
 
-const NewArrivals: React.FC<NewArrivalsProps> = ({ newArrivals }) => {
+const NewArrivals: React.FC<NewArrivalsProps> = ({
+  newArrivals,
+  translation,
+  language,
+}) => {
   return (
-    <section className="py-20">
+    <section id="arrivals" className="py-20">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-3xl font-bold text-blue-900">New Arrivals</h2>
+          <h2 className="text-3xl font-bold text-blue-900">
+            {translation[language].arrivals.title}
+          </h2>
           <a
             href="#"
             className="text-amber-500 font-medium hover:text-amber-600 inline-flex items-center cursor-pointer"
           >
-            View All
+            {translation[language].arrivals.button}
             <i className="fas fa-arrow-right ml-2 text-sm"></i>
           </a>
         </div>

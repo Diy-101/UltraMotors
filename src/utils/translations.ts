@@ -28,6 +28,10 @@ export interface LanguageTranslations {
     button: string;
     slides: Slide[];
   };
+  arrivals: {
+    title: string;
+    button: string;
+  };
   keybenefits: {
     slides: Slide[];
   };
@@ -73,6 +77,25 @@ export interface LanguageTranslations {
       connect: string;
       phone: string;
       ourEmail: string;
+    };
+  };
+  footer: {
+    subtitle: string;
+    rules: string;
+    quickLinks: {
+      title: string;
+      catalog: string;
+      about: string;
+      offers: string;
+      policy: string;
+      terms: string;
+    };
+    contactUs: {
+      firstPartAddress: string;
+      secondPartAddress: string;
+      number: string;
+      email: string;
+      workingHours: string;
     };
   };
 }
@@ -134,6 +157,10 @@ export const translations: Translations = {
             "Luxurious interior components to enhance comfort and aesthetics",
         },
       ],
+    },
+    arrivals: {
+      title: "New Arrivals",
+      button: "Contact",
     },
     keybenefits: {
       slides: [
@@ -215,6 +242,26 @@ export const translations: Translations = {
         connect: "Connect With Us",
       },
     },
+    footer: {
+      subtitle:
+        "Premium European vehicle components for discerning automotive enthusiasts. Quality, authenticity, and excellence in every part.",
+      rules: "© 2025 UltraMotors. All rights reserved.",
+      quickLinks: {
+        title: "Quick Links",
+        catalog: "Product Catalog",
+        about: "About Us",
+        offers: "Offers",
+        policy: "Privacy Policy",
+        terms: "Terms & Conditions",
+      },
+      contactUs: {
+        firstPartAddress: "Str. Marshala Govorova, house 37, lit. A",
+        secondPartAddress: "St. Petersburg, Russia, 198095",
+        number: "+7 965 004 84-38",
+        email: "6801782@mail.ru",
+        workingHours: "Mon-Fri: 9.00 — 19.00",
+      },
+    },
   },
   ru: {
     nav: {
@@ -224,7 +271,7 @@ export const translations: Translations = {
       contact: "Контакты",
     },
     hero: {
-      button: "Посмотреть решения",
+      button: "Связаться",
       slides: [
         {
           title: "Решения для Спецтехники",
@@ -268,6 +315,10 @@ export const translations: Translations = {
             "Роскошные компоненты интерьера для повышения комфорта и эстетики",
         },
       ],
+    },
+    arrivals: {
+      title: "Новые поступления",
+      button: "Связаться",
     },
     keybenefits: {
       slides: [
@@ -347,6 +398,26 @@ export const translations: Translations = {
         phone: "+7 965 004 84-38",
         ourEmail: "6801782@mail.ru",
         connect: "Мы в соцсетях",
+      },
+    },
+    footer: {
+      subtitle:
+        "Премиальные европейские автокомпоненты для требовательных автолюбителей. Качество, подлинность и совершенство в каждой детали.",
+      rules: "© 2025 UltraMotors. Все права защищены.",
+      quickLinks: {
+        title: "Быстрые ссылки",
+        catalog: "Каталог продукции",
+        about: "О нас",
+        offers: "Предложения",
+        policy: "Политика конфиденциальности",
+        terms: "Условия использования",
+      },
+      contactUs: {
+        firstPartAddress: "ул. Маршала Говорова, дом 37, лит. А",
+        secondPartAddress: "Санкт-Петербург, Россия, 198095",
+        number: "+7 965 004 84-38",
+        email: "6801782@mail.ru",
+        workingHours: "Пн–Пт: 9:00 — 19:00",
       },
     },
   },
