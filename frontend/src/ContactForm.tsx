@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import type { Translations } from "./utils/translations";
 import type { Language } from "./hooks/useLanguage";
 import {
@@ -18,10 +18,53 @@ interface ContactProps {
 }
 
 const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:8000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Ошибка при отправке формы");
+      }
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      alert("Ошибка: " + error);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
+          {/* Заголовок */}
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-blue-900 mb-4">
               {translations[language].contactForm.title}
@@ -30,9 +73,10 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
               {translations[language].contactForm.subtitle}
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label
@@ -51,6 +95,8 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                           .placeholderFN
                       }
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
+                      value={formData.firstName}
+                      onChange={handleChange}
                     />
                   </div>
                   <div>
@@ -70,9 +116,12 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                           .placeholderLN
                       }
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
+                      value={formData.lastName}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
+
                 <div>
                   <label
                     className="block text-sm font-medium text-gray-700 mb-2"
@@ -90,8 +139,11 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                         .placeholderEmail
                     }
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
+
                 <div>
                   <label
                     className="block text-sm font-medium text-gray-700 mb-2"
@@ -108,8 +160,11 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                       translations[language].contactForm.leftSide.placeholderPN
                     }
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
+                    value={formData.phone}
+                    onChange={handleChange}
                   />
                 </div>
+
                 <div>
                   <label
                     className="block text-sm font-medium text-gray-700 mb-2"
@@ -127,8 +182,11 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                         .placeholderMessage
                     }
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm resize-none"
+                    value={formData.message}
+                    onChange={handleChange}
                   ></textarea>
                 </div>
+
                 <button
                   type="submit"
                   className="w-full bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300 !rounded-button"
