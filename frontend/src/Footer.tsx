@@ -93,7 +93,9 @@ const Footer: React.FC<FooterProps> = ({ language, translations }) => {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-6">Contact Us</h3>
+            <h3 className="text-lg font-bold mb-6">
+              {translations[language].footer.contactUs.title}
+            </h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 mt-1 text-amber-500" />

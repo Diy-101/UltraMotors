@@ -2,6 +2,7 @@ import React from "react";
 import type { Translations } from "./utils/translations";
 import type { Language } from "./hooks/useLanguage";
 import type { Slide } from "./types/slide";
+import { motion } from "framer-motion";
 
 interface HeroProps {
   heroSlides: Slide[];
@@ -37,15 +38,40 @@ const Hero: React.FC<HeroProps> = ({
             <div className="container mx-auto px-6">
               <div className="max-w-lg">
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  {slide.title}
+                  <motion.span
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  >
+                    {slide.title}
+                  </motion.span>
                 </h1>
-                <p className="text-xl text-gray-200 mb-8">{slide.subtitle}</p>
-                <a
+                <motion.p
+                  className="text-xl text-gray-200 mb-8"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  {slide.subtitle}
+                </motion.p>
+                <motion.a
                   href="#contact"
-                  className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer"
+                  className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer shadow-lg"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.6,
+                    type: "spring",
+                    stiffness: 120,
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 8px 32px rgba(251,191,36,0.3)",
+                  }}
                 >
                   {translations[language].hero.button}
-                </a>
+                </motion.a>
               </div>
             </div>
           </div>

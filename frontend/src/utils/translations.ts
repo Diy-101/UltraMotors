@@ -91,6 +91,7 @@ export interface LanguageTranslations {
       terms: string;
     };
     contactUs: {
+      title: string;
       firstPartAddress: string;
       secondPartAddress: string;
       number: string;
@@ -255,6 +256,7 @@ export const translations: Translations = {
         terms: "Terms & Conditions",
       },
       contactUs: {
+        title: "Contact Us",
         firstPartAddress: "Str. Marshala Govorova, house 37, lit. A",
         secondPartAddress: "St. Petersburg, Russia, 198095",
         number: "+7 965 004 84-38",
@@ -413,6 +415,7 @@ export const translations: Translations = {
         terms: "Условия использования",
       },
       contactUs: {
+        title: "Свяжитесь с нами",
         firstPartAddress: "ул. Маршала Говорова, дом 37, лит. А",
         secondPartAddress: "Санкт-Петербург, Россия, 198095",
         number: "+7 965 004 84-38",

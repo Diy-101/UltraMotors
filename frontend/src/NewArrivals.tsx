@@ -2,6 +2,7 @@ import React from "react";
 import type { Arrival } from "./types/arrival";
 import type { Translations } from "./utils/translations";
 import type { Language } from "./hooks/useLanguage";
+import { motion } from "framer-motion";
 
 interface NewArrivalsProps {
   newArrivals: Arrival[];
@@ -31,9 +32,16 @@ const NewArrivals: React.FC<NewArrivalsProps> = ({
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {newArrivals.map((product, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
+              whileHover={{
+                scale: 1.04,
+                boxShadow: "0 8px 32px rgba(251,191,36,0.15)",
+              }}
             >
               <div className="h-64 overflow-hidden">
                 <img
@@ -63,7 +71,7 @@ const NewArrivals: React.FC<NewArrivalsProps> = ({
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
