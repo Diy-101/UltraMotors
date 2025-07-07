@@ -2,6 +2,7 @@ import React from "react";
 import type { Translations } from "./utils/translations";
 import type { Language } from "./hooks/useLanguage";
 import { MapPin, Phone, Mail, Clock, ArrowUp } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 interface FooterProps {
   language: Language;
@@ -9,6 +10,37 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ language, translations }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Helper to handle hash navigation from any route
+  const handleNav = (hash: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate(`/${hash}`);
+      setTimeout(() => {
+        const el = document.getElementById(hash.replace("#", ""));
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.getElementById(hash.replace("#", ""));
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      else window.location.hash = hash;
+    }
+  };
+
+  // Helper for scroll-to-top that works from any route
+  const handleScrollToTop = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 relative">
       <div className="container mx-auto px-6">
@@ -62,31 +94,51 @@ const Footer: React.FC<FooterProps> = ({ language, translations }) => {
                 {
                   translation: translations[language].footer.quickLinks.catalog,
                   href: "#categories",
+                  isPrivacy: false,
+                  isTerms: false,
                 },
                 {
                   translation: translations[language].footer.quickLinks.about,
                   href: "#about",
+                  isPrivacy: false,
+                  isTerms: false,
                 },
                 {
                   translation: translations[language].footer.quickLinks.offers,
                   href: "#arrivals",
+                  isPrivacy: false,
+                  isTerms: false,
                 },
                 {
                   translation: translations[language].footer.quickLinks.policy,
-                  href: "#",
+                  href: "/privacy-policy",
+                  isPrivacy: true,
+                  isTerms: false,
                 },
                 {
                   translation: translations[language].footer.quickLinks.terms,
-                  href: "#",
+                  href: "/terms",
+                  isPrivacy: false,
+                  isTerms: true,
                 },
               ].map((link) => (
                 <li key={link.translation}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-                  >
-                    {link.translation}
-                  </a>
+                  {link.isPrivacy || link.isTerms ? (
+                    <Link
+                      to={link.href}
+                      className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                    >
+                      {link.translation}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                      onClick={handleNav(link.href)}
+                    >
+                      {link.translation}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -137,7 +189,7 @@ const Footer: React.FC<FooterProps> = ({ language, translations }) => {
         </div>
       </div>
       <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onClick={handleScrollToTop}
         className="fixed bottom-6 right-6 bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full shadow-lg transition-colors duration-300 !rounded-button cursor-pointer"
         aria-label="Scroll to top"
       >

@@ -78,6 +78,8 @@ export interface LanguageTranslations {
       phone: string;
       ourEmail: string;
     };
+    agreementText: string;
+    agreementError: string;
   };
   footer: {
     subtitle: string;
@@ -242,6 +244,9 @@ export const translations: Translations = {
         ourEmail: "6801782@mail.ru",
         connect: "Connect With Us",
       },
+      agreementText: "I agree to the {policy} and {terms}.",
+      agreementError:
+        "You must agree to the Privacy Policy and Terms and Conditions.",
     },
     footer: {
       subtitle:
@@ -401,6 +406,9 @@ export const translations: Translations = {
         ourEmail: "6801782@mail.ru",
         connect: "Мы в соцсетях",
       },
+      agreementText: "Я соглашаюсь с {policy} и {terms}.",
+      agreementError:
+        "Вы должны согласиться с Политикой конфиденциальности и Условиями использования.",
     },
     footer: {
       subtitle:

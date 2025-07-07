@@ -14,6 +14,9 @@ import { useLanguage } from "./hooks/useLanguage.ts";
 import type { Language } from "./hooks/useLanguage.ts";
 import { Truck, BadgeCheck, PackageCheck } from "lucide-react";
 import { brands } from "./data/brands.ts";
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermsAndConditions from "./TermsAndConditions";
+import { Routes, Route } from "react-router-dom";
 
 const App: React.FC = () => {
   const browserLang = navigator.language.slice(0, 2); // "en", "ru"
@@ -146,33 +149,44 @@ const App: React.FC = () => {
         translations={translations}
       />
       <main className="pt-20">
-        <Hero
-          heroSlides={heroSlides}
-          currentSlide={currentSlide}
-          setCurrentSlide={setCurrentSlide}
-          translations={translations}
-          language={language}
-        />
-        <ProductCategories
-          title={translations[language].categories.title}
-          subtitle={translations[language].categories.subtitle}
-          button={translations[language].categories.button}
-          productCategories={productCategories}
-        />
-        <NewArrivals
-          newArrivals={newArrivals}
-          translation={translations}
-          language={language}
-        />
-        <KeyBenefits benefitSlides={keybenefits} />
-        <BrandShowcase
-          brands={brands}
-          translations={translations}
-          language={language}
-        />
-        <AboutUs language={language} translations={translations} />
-        <CallToAction language={language} translations={translations} />
-        <ContactForm language={language} translations={translations} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero
+                  heroSlides={heroSlides}
+                  currentSlide={currentSlide}
+                  setCurrentSlide={setCurrentSlide}
+                  translations={translations}
+                  language={language}
+                />
+                <ProductCategories
+                  title={translations[language].categories.title}
+                  subtitle={translations[language].categories.subtitle}
+                  button={translations[language].categories.button}
+                  productCategories={productCategories}
+                />
+                <NewArrivals
+                  newArrivals={newArrivals}
+                  translation={translations}
+                  language={language}
+                />
+                <KeyBenefits benefitSlides={keybenefits} />
+                <BrandShowcase
+                  brands={brands}
+                  translations={translations}
+                  language={language}
+                />
+                <AboutUs language={language} translations={translations} />
+                <CallToAction language={language} translations={translations} />
+                <ContactForm language={language} translations={translations} />
+              </>
+            }
+          />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+        </Routes>
       </main>
       <Footer language={language} translations={translations} />
     </div>

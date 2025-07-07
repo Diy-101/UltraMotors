@@ -25,6 +25,8 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
     phone: "",
     message: "",
   });
+  const [agreed, setAgreed] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -34,6 +36,11 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!agreed) {
+      setShowError(true);
+      return;
+    }
+    setShowError(false);
 
     try {
       const response = await fetch("http://localhost:8000/api/contact", {
@@ -59,6 +66,16 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
       alert("Ошибка: " + error);
     }
   };
+
+  const agreementHtml = translations[language].contactForm.agreementText
+    .replace(
+      "{policy}",
+      `<a href="/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-blue-900 underline">${translations[language].footer.quickLinks.policy}</a>`
+    )
+    .replace(
+      "{terms}",
+      `<a href="/terms" target="_blank" rel="noopener noreferrer" class="text-blue-900 underline">${translations[language].footer.quickLinks.terms}</a>`
+    );
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
@@ -187,9 +204,31 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                   ></textarea>
                 </div>
 
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="privacy-agree"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    className="mr-2"
+                    required
+                  />
+                  <label
+                    htmlFor="privacy-agree"
+                    className="text-sm text-gray-700"
+                  >
+                    <span dangerouslySetInnerHTML={{ __html: agreementHtml }} />
+                  </label>
+                </div>
+                {showError && (
+                  <div className="text-red-600 text-sm mb-2">
+                    {translations[language].contactForm.agreementError}
+                  </div>
+                )}
                 <button
                   type="submit"
                   className="w-full bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300 !rounded-button"
+                  disabled={!agreed}
                 >
                   {translations[language].contactForm.leftSide.sendButton}
                 </button>
