@@ -228,7 +228,6 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                 <button
                   type="submit"
                   className="w-full bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300 !rounded-button"
-                  disabled={!agreed}
                 >
                   {translations[language].contactForm.leftSide.sendButton}
                 </button>
