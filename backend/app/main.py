@@ -34,10 +34,10 @@ def get_db():
         db.close()
 
 @app.post("/api/contact")
-async def submit_contact(
+def submit_contact(
     contact: schemas.ContactCreate,
     db: Session = Depends(get_db)
-    ) -> models.Contact:
+    ):
     """Create a new contact entry in the database
 
     Args:
@@ -52,4 +52,4 @@ async def submit_contact(
     Returns:
         models.Contact: The newly created contact
     """
-    return await crud.create_contact(db, contact)
+    return crud.create_contact(db, contact)
