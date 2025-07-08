@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import type { Translations } from "./utils/translations";
 import type { Language } from "./hooks/useLanguage";
 import {
@@ -11,6 +11,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ContactProps {
   translations: Translations;
@@ -27,6 +28,14 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
   });
   const [agreed, setAgreed] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const closeModalButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (showModal && closeModalButtonRef.current) {
+      closeModalButtonRef.current.focus();
+    }
+  }, [showModal]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -62,8 +71,9 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
         phone: "",
         message: "",
       });
+      setShowModal(true);
     } catch (error) {
-      alert("Ошибка: " + error);
+      console.log("Ошибка: " + error);
     }
   };
 
@@ -79,6 +89,49 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
+      <AnimatePresence>
+        {showModal && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowModal(false)}
+          >
+            <motion.div
+              className="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full text-center relative"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              onClick={(e: React.MouseEvent<HTMLDivElement>) =>
+                e.stopPropagation()
+              }
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="contact-success-title"
+            >
+              <h3
+                id="contact-success-title"
+                className="text-2xl font-bold text-blue-900 mb-4"
+              >
+                Спасибо!
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее
+                время.
+              </p>
+              <button
+                ref={closeModalButtonRef}
+                className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-full font-medium transition-colors duration-300"
+                onClick={() => setShowModal(false)}
+              >
+                Закрыть
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Заголовок */}
