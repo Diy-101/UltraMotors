@@ -1,4 +1,9 @@
 // utils/translations.ts
+interface Arrival {
+  title: string;
+  price: string;
+  availability: string;
+}
 
 interface Quality {
   quality: string;
@@ -31,6 +36,7 @@ export interface LanguageTranslations {
   arrivals: {
     title: string;
     button: string;
+    arrivals: Arrival[];
   };
   keybenefits: {
     slides: Slide[];
@@ -164,6 +170,28 @@ export const translations: Translations = {
     arrivals: {
       title: "New Arrivals",
       button: "Contact",
+      arrivals: [
+        {
+          title: "Caterpillar C6 Fuel Injector",
+          price: "Request",
+          availability: "In Stock",
+        },
+        {
+          title: "HITACHI ZEXEL Air Conditioner Compressor",
+          price: "Request",
+          availability: "Pre-order",
+        },
+        {
+          title: "Hydromotor 0077847 Ponsse",
+          price: "Request",
+          availability: "In Stock",
+        },
+        {
+          title: "Power Steering Pump",
+          price: "Request",
+          availability: "Pre-order",
+        },
+      ],
     },
     keybenefits: {
       slides: [
@@ -326,6 +354,28 @@ export const translations: Translations = {
     arrivals: {
       title: "Новые поступления",
       button: "Связаться",
+      arrivals: [
+        {
+          title: "Топливная форсунка Caterpillar DEUTZ",
+          price: "Узнать",
+          availability: "В наличии",
+        },
+        {
+          title: "Компрессор кондиционера HITACHI ZEXEL",
+          price: "Узнать",
+          availability: "Предзаказ",
+        },
+        {
+          title: "Гидроматор 0077847 Ponsse",
+          price: "Узнать",
+          availability: "В наличии",
+        },
+        {
+          title: "Гидромотор FUCHS TEREX",
+          price: "Узнать",
+          availability: "Предзаказ",
+        },
+      ],
     },
     keybenefits: {
       slides: [

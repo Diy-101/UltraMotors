@@ -3,6 +3,7 @@ import type { Arrival } from "./types/arrival";
 import type { Translations } from "./utils/translations";
 import type { Language } from "./hooks/useLanguage";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 interface NewArrivalsProps {
   newArrivals: Arrival[];
@@ -23,11 +24,11 @@ const NewArrivals: React.FC<NewArrivalsProps> = ({
             {translation[language].arrivals.title}
           </h2>
           <a
-            href="#"
+            href="#contact"
             className="text-amber-500 font-medium hover:text-amber-600 inline-flex items-center cursor-pointer"
           >
             {translation[language].arrivals.button}
-            <i className="fas fa-arrow-right ml-2 text-sm"></i>
+            <ArrowRight className="ml-2 w-4 h-4" />
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -43,11 +44,11 @@ const NewArrivals: React.FC<NewArrivalsProps> = ({
                 boxShadow: "0 8px 32px rgba(251,191,36,0.15)",
               }}
             >
-              <div className="h-64 overflow-hidden">
+              <div className="h-64 overflow-hidden flex items-center justify-center bg-gray-50">
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
                 />
               </div>
               <div className="p-6">
@@ -55,16 +56,24 @@ const NewArrivals: React.FC<NewArrivalsProps> = ({
                   {product.title}
                 </h3>
                 <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold text-amber-500">
-                    {product.price}
-                  </span>
+                  <a href="#contact" className="group">
+                    <span className="text-xl font-bold text-amber-500 group-hover:underline group-hover:text-amber-600 group-hover:scale-105 transition-all duration-200">
+                      {product.price}
+                    </span>
+                  </a>
                   <span
                     className={`text-sm px-3 py-1 rounded-full ${
-                      product.availability === "In Stock"
+                      ["In Stock", "В наличии"].includes(product.availability)
                         ? "bg-green-100 text-green-800"
-                        : product.availability === "Limited Stock"
+                        : ["Limited Stock", "Ограничено"].includes(
+                            product.availability
+                          )
                         ? "bg-yellow-100 text-yellow-800"
-                        : "bg-blue-100 text-blue-800"
+                        : ["Pre-order", "Предзаказ"].includes(
+                            product.availability
+                          )
+                        ? "bg-blue-100 text-blue-800"
+                        : "bg-gray-100 text-gray-800"
                     }`}
                   >
                     {product.availability}

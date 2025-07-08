@@ -15,10 +15,10 @@ const KeyBenefits: React.FC<BenefitsProps> = ({ benefitSlides }) => {
     <section id="benefits" className="py-16 bg-blue-900 text-white">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {benefitSlides.map((slides) => {
+          {benefitSlides.map((slides, idx) => {
             const Icon = slides.icon;
             return (
-              <div className="text-center">
+              <div className="text-center" key={slides.title + idx}>
                 <div className="inline-block p-4 bg-amber-500 rounded-full mb-4">
                   <Icon className="w-8 h-8 text-white" />
                 </div>

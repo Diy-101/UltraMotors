@@ -29,7 +29,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ language, translations }) => {
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
                 {translations[language].aboutUs.qualities.map((quality) => (
-                  <div className="flex items-center mb-3">
+                  <div className="flex items-center mb-3" key={quality.quality}>
                     <i className="fas fa-check-circle text-amber-500 mr-2"></i>
                     <span className="font-medium text-blue-900">
                       {quality.quality}

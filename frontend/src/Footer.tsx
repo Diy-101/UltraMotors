@@ -3,6 +3,10 @@ import type { Translations } from "./utils/translations";
 import type { Language } from "./hooks/useLanguage";
 import { MapPin, Phone, Mail, Clock, ArrowUp } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  scrollToSectionOrNavigate,
+  scrollToTopOrNavigate,
+} from "./utils/navigation";
 
 interface FooterProps {
   language: Language;
@@ -16,29 +20,12 @@ const Footer: React.FC<FooterProps> = ({ language, translations }) => {
   // Helper to handle hash navigation from any route
   const handleNav = (hash: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    if (location.pathname !== "/") {
-      navigate(`/${hash}`);
-      setTimeout(() => {
-        const el = document.getElementById(hash.replace("#", ""));
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    } else {
-      const el = document.getElementById(hash.replace("#", ""));
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-      else window.location.hash = hash;
-    }
+    scrollToSectionOrNavigate(hash, location, navigate);
   };
 
   // Helper for scroll-to-top that works from any route
   const handleScrollToTop = () => {
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 100);
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    scrollToTopOrNavigate(location, navigate);
   };
 
   return (

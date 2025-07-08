@@ -11,7 +11,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   setLanguage,
 }) => {
   return (
-    <div className="relative group ml-4">
+    <div className="relative group">
       <button className="flex items-center justify-center text-blue-900 hover:text-amber-500 transition-colors cursor-pointer">
         <Globe className="w-5 h-5" />
       </button>
