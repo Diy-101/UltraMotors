@@ -48,17 +48,17 @@ const App: React.FC = () => {
 
   const heroSlides = [
     {
-      image: "/digger.jpg",
+      image: "/machine.jpg",
       title: t.hero.slides[0].title,
       subtitle: t.hero.slides[0].subtitle,
     },
     {
-      image: "/car_components.jpg",
+      image: "/digger.jpg",
       title: t.hero.slides[1].title,
       subtitle: t.hero.slides[1].subtitle,
     },
     {
-      image: "/car_components_2.jpg",
+      image: "/hero3.jpg",
       title: t.hero.slides[2].title,
       subtitle: t.hero.slides[2].subtitle,
     },

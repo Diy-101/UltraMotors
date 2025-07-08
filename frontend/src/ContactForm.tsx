@@ -339,7 +339,7 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                   </div>
                 </div>
               </div>
-              <div>
+              {/*<div>
                 <h3 className="text-xl font-bold text-blue-900 mb-4">
                   {translations[language].contactForm.rightSide.connect}
                 </h3>
@@ -375,7 +375,7 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>
