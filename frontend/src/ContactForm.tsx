@@ -6,10 +6,10 @@ import {
   Phone,
   Mail,
   Clock,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
+  //Facebook,
+  //Twitter,
+  //Instagram,
+  //Linkedin,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
