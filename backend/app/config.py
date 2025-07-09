@@ -1,15 +1,10 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
-    """Contain enviromental variables with validation
-
-    Args:
-        BaseSettings (BaseSettings): Default superclass
-    """
     USER: str
     PASSWORD: str
     HOST: str
-    PORT:int
+    PORT: int
     NAME: str
     model_config = SettingsConfigDict(
         env_prefix='DB_',

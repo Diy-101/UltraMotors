@@ -52,14 +52,14 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
     setShowError(false);
 
     try {
-      const response = await fetch("http://localhost:8000/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
+      console.log(response);
       if (!response.ok) {
         throw new Error("Ошибка при отправке формы");
       }
