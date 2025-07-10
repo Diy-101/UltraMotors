@@ -184,6 +184,14 @@ const Header: React.FC<HeaderProps> = ({
                 <Phone className="w-5 h-5 mr-2 text-amber-500" />
                 +7 (965) 004-84-38
               </a>
+              <a
+                href="tel:+79626858417"
+                className="flex items-center justify-center text-blue-900 font-semibold text-base bg-amber-100 rounded-lg py-2 px-4 shadow hover:bg-amber-200 transition-colors whitespace-nowrap"
+                style={{ letterSpacing: "0.5px" }}
+              >
+                <Phone className="w-5 h-5 mr-2 text-amber-500" />
+                +7 (962) 685-84-17
+              </a>
             </div>
           </nav>
         </div>

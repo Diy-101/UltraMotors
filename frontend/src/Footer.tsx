@@ -150,7 +150,13 @@ const Footer: React.FC<FooterProps> = ({ language, translations }) => {
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-amber-500" />
                 <span className="text-gray-400">
-                  {translations[language].footer.contactUs.number}
+                  {translations[language].footer.contactUs.number_1}
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="w-5 h-5 mr-3 text-amber-500" />
+                <span className="text-gray-400">
+                  {translations[language].footer.contactUs.number_2}
                 </span>
               </li>
               <li className="flex items-center">

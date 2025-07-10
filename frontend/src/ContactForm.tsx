@@ -304,7 +304,7 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                       <p className="text-gray-600">
                         {
                           translations[language].contactForm.rightSide
-                            .secondPartLoaction
+                            .secondPartLocation
                         }
                       </p>
                     </div>
@@ -319,7 +319,13 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                   <div className="flex items-center space-x-4">
                     <Phone className="text-amber-500 w-5 h-5" />
                     <p className="text-gray-600">
-                      {translations[language].contactForm.rightSide.phone}
+                      {translations[language].contactForm.rightSide.phone_1}
+                    </p>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <Phone className="text-amber-500 w-5 h-5" />
+                    <p className="text-gray-600">
+                      {translations[language].contactForm.rightSide.phone_2}
                     </p>
                   </div>
                   <div className="flex items-center space-x-4">

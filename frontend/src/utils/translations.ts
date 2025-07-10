@@ -77,11 +77,12 @@ export interface LanguageTranslations {
     rightSide: {
       titlelocation: string;
       firstPartLocation: string;
-      secondPartLoaction: string;
+      secondPartLocation: string;
       contactInfo: string;
       workingHours: string;
       connect: string;
-      phone: string;
+      phone_1: string;
+      phone_2: string;
       ourEmail: string;
     };
     agreementText: string;
@@ -102,7 +103,8 @@ export interface LanguageTranslations {
       title: string;
       firstPartAddress: string;
       secondPartAddress: string;
-      number: string;
+      number_1: string;
+      number_2: string;
       email: string;
       workingHours: string;
     };
@@ -265,10 +267,11 @@ export const translations: Translations = {
       rightSide: {
         titlelocation: "Our Location",
         firstPartLocation: "Str. Marshala Govorova, house 37, lit. A",
-        secondPartLoaction: "St. Petersburg, Russia, 198095",
+        secondPartLocation: "St. Petersburg, Russia, 198095",
         contactInfo: "Contact Information",
         workingHours: "Mon-Fri: 9.00 — 19.00",
-        phone: "+7 965 004 84-38",
+        phone_1: "+7 965 004 84-38",
+        phone_2: "+7 962 685 84-17",
         ourEmail: "6801782@mail.ru",
         connect: "Connect With Us",
       },
@@ -292,7 +295,8 @@ export const translations: Translations = {
         title: "Contact Us",
         firstPartAddress: "Str. Marshala Govorova, house 37, lit. A",
         secondPartAddress: "St. Petersburg, Russia, 198095",
-        number: "+7 965 004 84-38",
+        number_1: "+7 (965) 004-84-38",
+        number_2: "+7 (962) 685-84-17",
         email: "6801782@mail.ru",
         workingHours: "Mon-Fri: 9.00 — 19.00",
       },
@@ -449,10 +453,11 @@ export const translations: Translations = {
       rightSide: {
         titlelocation: "Наш адрес",
         firstPartLocation: "ул. Маршала Говорова, дом 37, лит. А",
-        secondPartLoaction: "Санкт-Петербург, Россия, 198095",
+        secondPartLocation: "Санкт-Петербург, Россия, 198095",
         contactInfo: "Контактная информация",
         workingHours: "Пн–Пт: 9:00 — 19:00",
-        phone: "+7 965 004 84-38",
+        phone_1: "+7 965 004 84-38",
+        phone_2: "+7 962 685 84-17",
         ourEmail: "6801782@mail.ru",
         connect: "Мы в соцсетях",
       },
@@ -476,7 +481,8 @@ export const translations: Translations = {
         title: "Свяжитесь с нами",
         firstPartAddress: "ул. Маршала Говорова, дом 37, лит. А",
         secondPartAddress: "Санкт-Петербург, Россия, 198095",
-        number: "+7 965 004 84-38",
+        number_1: "+7 (965) 004-84-38",
+        number_2: "+7 (962) 685-84-17",
         email: "6801782@mail.ru",
         workingHours: "Пн–Пт: 9:00 — 19:00",
       },
