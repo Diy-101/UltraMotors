@@ -101,16 +101,16 @@ def send_self_email(contact:schemas.ContactCreate, server: str = 'smtp.yandex.ru
     msg = MIMEText(content, text_subtype, 'utf-8')
     msg['Subject'] = "Компания «UltraMotors» приветствует вас"
     msg['From'] = f"UltraMotors <{login}>"
-    msg['To'] = login
+    msg['To'] = "6801782@mail.ru"
 
     try:
         context = ssl.create_default_context()
         with SMTP_SSL(server, port, context=context) as sr:
             sr.login(login, password)
-            sr.sendmail(login, [login], msg.as_string())
+            sr.sendmail(login, ["6801782@mail.ru"], msg.as_string())
             print('Message sent')
 
-        print("✅ Письмо успешно отправлено самому себе!")
+        print("✅ Письмо успешно отправлено на 6801782@mail.ru!")
         return True
     except Exception as e:
         print(f"❌ Ошибка: {e}")
