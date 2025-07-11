@@ -16,7 +16,7 @@ from .database import SessionLocal, engine, Base
 
 
 # Load all environmental variables
-load_dotenv('../.env')
+load_dotenv("/var/www/UltraMotors/backend/.env")
 
 # Create all tables from models.py in db
 Base.metadata.create_all(bind=engine)
@@ -25,10 +25,17 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://ultramotors.pro", "http://localhost:5173", "http://127.0.0.1"],
+    allow_origins=[
+        "http://ultramotors.pro",
+        "https://ultramotors.pro",
+        "http://127.0.0.1:3000",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ],
     allow_credentials=True,
-    allow_methods=["POST", "GET"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"]
 )
 
 def get_db():

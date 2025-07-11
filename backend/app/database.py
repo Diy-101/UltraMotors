@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 import os
 
-load_dotenv('../.env')
+load_dotenv("/var/www/UltraMotors/backend/.env")
 
 USER = os.getenv('DB_USER')
 PASSWORD = os.getenv('DB_PASSWORD')
