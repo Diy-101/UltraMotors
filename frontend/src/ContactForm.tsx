@@ -21,7 +21,6 @@ interface ContactProps {
 const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "",
     email: "",
     phone: "",
     message: "",
@@ -66,7 +65,6 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
 
       setFormData({
         firstName: "",
-        lastName: "",
         email: "",
         phone: "",
         message: "",
@@ -147,49 +145,25 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <form className="space-y-6" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                      htmlFor="firstName"
-                    >
-                      {translations[language].contactForm.leftSide.firstName}
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      placeholder={
-                        translations[language].contactForm.leftSide
-                          .placeholderFN
-                      }
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div>
-                    <label
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                      htmlFor="lastName"
-                    >
-                      {translations[language].contactForm.leftSide.lastName}
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      placeholder={
-                        translations[language].contactForm.leftSide
-                          .placeholderLN
-                      }
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                    />
-                  </div>
+                <div>
+                  <label
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                    htmlFor="firstName"
+                  >
+                    {translations[language].contactForm.leftSide.firstName}
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    placeholder={
+                      translations[language].contactForm.leftSide.placeholderFN
+                    }
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900 text-sm"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                  />
                 </div>
 
                 <div>

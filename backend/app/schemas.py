@@ -7,7 +7,6 @@ class ContactCreate(BaseModel):
         BaseModel (BaseModel): Default superclass which gives validation for other subclasses
     """
     first_name: str = Field(..., alias="firstName")
-    last_name: str = Field(..., alias="lastName")
     email: EmailStr
     phone: str
     message: str
