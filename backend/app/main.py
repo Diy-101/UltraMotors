@@ -31,6 +31,7 @@ app.add_middleware(
         "http://127.0.0.1:3000",
         "http://localhost:8000",
         "http://127.0.0.1:8000",
+        "http://localhost:5173"
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
@@ -145,7 +146,7 @@ def submit_contact(
     """
 
 
-    send_self_email(contact)
-    send_email(contact)
+    #send_self_email(contact)
+    #send_email(contact)
 
     return crud.create_contact(db, contact)

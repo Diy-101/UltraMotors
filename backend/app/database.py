@@ -6,11 +6,11 @@ import os
 
 load_dotenv("/var/www/UltraMotors/backend/.env")
 
-USER = os.getenv('DB_USER')
-PASSWORD = os.getenv('DB_PASSWORD')
-HOST = os.getenv('DB_HOST')
-PORT = os.getenv('DB_PORT')
-NAME = os.getenv('DB_NAME')
+USER = os.getenv('DB_USER', 'user')
+PASSWORD = os.getenv('DB_PASSWORD', '1234')
+HOST = os.getenv('DB_HOST', 'mysql')
+PORT = os.getenv('DB_PORT', 3306)
+NAME = os.getenv('DB_NAME', 'mydb')
 
 # Creates enviromental variables
 DATABASE_URL = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{NAME}"
