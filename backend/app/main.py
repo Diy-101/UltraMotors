@@ -18,6 +18,9 @@ from .database import SessionLocal, engine, Base
 # Load all environmental variables
 load_dotenv("/var/www/UltraMotors/backend/.env")
 
+EMAIL_LOGIN = os.getenv("EMAIL_LOGIN")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+
 # Create all tables from models.py in db
 Base.metadata.create_all(bind=engine)
 
@@ -57,10 +60,7 @@ def get_db():
 
 def send_email(contact:schemas.ContactCreate, server: str = 'smtp.yandex.ru', port: int = 465) -> bool:
 
-    login = os.getenv("EMAIL_LOGIN")
-    password = os.getenv("EMAIL_PASSWORD")
-
-    if not login or not password:
+    if not EMAIL_LOGIN or not EMAIL_PASSWORD:
         raise ValueError('You should make .env file with following variables:\nEMAIL_LOGIN\nEMAIL_PASSWORD')
 
     contact_info: dict = contact.model_dump()
@@ -72,14 +72,14 @@ def send_email(contact:schemas.ContactCreate, server: str = 'smtp.yandex.ru', po
 
     msg = MIMEText(content, text_subtype, 'utf-8')
     msg['Subject'] = "Компания «UltraMotors» приветствует вас"
-    msg['From'] = f"UltraMotors <{login}>"
+    msg['From'] = f"UltraMotors <{EMAIL_LOGIN}>"
     msg['To'] = contact_info['email']
 
     try:
         context = ssl.create_default_context()
         with SMTP_SSL(server, port, context=context) as sr:
-            sr.login(login, password)
-            sr.sendmail(login, [contact_info['email']], msg.as_string())
+            sr.login(EMAIL_LOGIN, EMAIL_PASSWORD)
+            sr.sendmail(EMAIL_LOGIN, [contact_info['email']], msg.as_string())
             print("✅ Письмо успешно отправлено клиенту")
         return True
     except Exception as e:
@@ -89,10 +89,7 @@ def send_email(contact:schemas.ContactCreate, server: str = 'smtp.yandex.ru', po
 
 def send_self_email(contact:schemas.ContactCreate, server: str = 'smtp.yandex.ru', port: int = 465) -> bool:
 
-    login = os.getenv("EMAIL_LOGIN")
-    password = os.getenv("EMAIL_PASSWORD")
-
-    if not login or not password:
+    if not EMAIL_LOGIN or not EMAIL_PASSWORD:
         raise ValueError('You should make .env file with following variables:\nEMAIL_LOGIN\nEMAIL_PASSWORD')
 
     contact_info: dict = contact.model_dump()
@@ -108,14 +105,14 @@ def send_self_email(contact:schemas.ContactCreate, server: str = 'smtp.yandex.ru
 
     msg = MIMEText(content, text_subtype, 'utf-8')
     msg['Subject'] = "Компания «UltraMotors» приветствует вас"
-    msg['From'] = f"UltraMotors <{login}>"
+    msg['From'] = f"UltraMotors <{EMAIL_LOGIN}>"
     msg['To'] = "6801782@mail.ru"
 
     try:
         context = ssl.create_default_context()
         with SMTP_SSL(server, port, context=context) as sr:
-            sr.login(login, password)
-            sr.sendmail(login, ["6801782@mail.ru"], msg.as_string())
+            sr.login(EMAIL_LOGIN, EMAIL_PASSWORD)
+            sr.sendmail(EMAIL_LOGIN, ["6801782@mail.ru"], msg.as_string())
             print('Message sent')
 
         print("✅ Письмо успешно отправлено на 6801782@mail.ru!")
@@ -146,7 +143,7 @@ def submit_contact(
     """
 
 
-    #send_self_email(contact)
-    #send_email(contact)
+    send_self_email(contact)
+    send_email(contact)
 
     return crud.create_contact(db, contact)
