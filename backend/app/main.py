@@ -16,7 +16,7 @@ from .database import SessionLocal, engine, Base
 
 
 # Load all environmental variables
-load_dotenv()
+load_dotenv('../.env')
 
 # Create all tables from models.py in db
 Base.metadata.create_all(bind=engine)
