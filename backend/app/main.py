@@ -59,6 +59,26 @@ def get_db():
 
 
 def send_email(contact:schemas.ContactCreate, server: str = 'smtp.yandex.ru', port: int = 465) -> bool:
+    """
+    The function `send_email` sends an email to a contact using SMTP with optional server and port
+    parameters, handling exceptions and returning a boolean based on success.
+
+    Args:
+      contact (schemas.ContactCreate): The `send_email` function takes in a `contact` parameter of type
+    `schemas.ContactCreate`, which likely contains information about the recipient of the email such as
+    their email address, name, etc. The function also has optional parameters `server` and `port` which
+    default to 'smtp.yandex
+      server (str): The `server` parameter in the `send_email` function is used to specify the SMTP
+    server address to which the email will be sent. In this case, the default SMTP server address is set
+    to 'smtp.yandex.ru'. You can change this server address to the one provided by your email service.
+    Defaults to smtp.yandex.ru
+      port (int): Port is the port number used for the SMTP server. In this case, the default port is
+    set to 465, which is commonly used for SMTP over SSL (SMTPS). Defaults to 465
+
+    Returns:
+      The `send_email` function returns a boolean value - `True` if the email was successfully sent, and
+    `False` if there was an error during the sending process.
+    """
 
     if not EMAIL_LOGIN or not EMAIL_PASSWORD:
         raise ValueError('You should make .env file with following variables:\nEMAIL_LOGIN\nEMAIL_PASSWORD')
@@ -88,6 +108,28 @@ def send_email(contact:schemas.ContactCreate, server: str = 'smtp.yandex.ru', po
         return False
 
 def send_self_email(contact:schemas.ContactCreate, server: str = 'smtp.yandex.ru', port: int = 465) -> bool:
+    """
+    The function `send_self_email` sends an email with contact information to a specified email address
+    using SMTP protocol.
+
+    Args:
+      contact (schemas.ContactCreate): The `send_self_email` function takes a `contact` object of type
+    `schemas.ContactCreate` as input, along with optional parameters `server` and `port` for the SMTP
+    server details. The function composes an email message using the contact information provided, and
+    attempts to send the email using
+      server (str): The `server` parameter in the `send_self_email` function represents the SMTP server
+    address that will be used to send the email. In this case, the default SMTP server address is set to
+    'smtp.yandex.ru'. This is the server that will handle the outgoing email communication. Defaults to
+    smtp.yandex.ru
+      port (int): The `port` parameter in the `send_self_email` function is used to specify the port
+    number for the SMTP server connection. In this case, the default port is set to `465`, which is
+    commonly used for SMTP over SSL (SMTPS) connections. This port is typically used for secure.
+    Defaults to 465
+
+    Returns:
+      The function `send_self_email` returns a boolean value - `True` if the email was successfully
+    sent, and `False` if there was an error during the sending process.
+    """
 
     if not EMAIL_LOGIN or not EMAIL_PASSWORD:
         raise ValueError('You should make .env file with following variables:\nEMAIL_LOGIN\nEMAIL_PASSWORD')
