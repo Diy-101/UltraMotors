@@ -2,7 +2,7 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
-from uvicorn.config import LOGGING_CONFIG
+import uvicorn
 
 # SMTP & SSL & OS
 from smtplib import SMTP_SSL
@@ -10,6 +10,8 @@ from email.mime.text import MIMEText
 from dotenv import load_dotenv
 import ssl
 import os
+
+import uvicorn.config
 
 # Models & schemes
 from . import models, schemas, crud
@@ -142,3 +144,7 @@ def submit_contact(
     send_email(contact.model_dump())
 
     return crud.create_contact(db, contact)
+
+if __name__ == "__main__":
+    uvicorn.config.LOGGING_CONFIG["formatters"]["default"]["fmt"] = "%(asctime)s [%(name)s] %(levelprefix)s %(message)s"
+    uvicorn.run("main:app", host='0.0.0.0', port=8000, reload=False)
