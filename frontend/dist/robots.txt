@@ -1,4 +1,6 @@
 User-agent: *
-Disallow:
+Allow: /
+Crawl-Delay: 2
 
 Sitemap: https://ultramotors.pro/sitemap.xml
+Host: https://ultramotors.pro
