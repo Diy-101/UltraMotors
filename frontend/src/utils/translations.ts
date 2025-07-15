@@ -370,7 +370,7 @@ export const translations: Translations = {
           availability: "Предзаказ",
         },
         {
-          title: "Гидроматор 0077847 Ponsse",
+          title: "Гидромотор 0077847 Ponsse",
           price: "Узнать",
           availability: "В наличии",
         },
