@@ -1,5 +1,5 @@
 import type { Brand } from "../types/brand";
-import KamazLogo from "../assets/logos/kamaz.svg";
+import SAFLogo from "../assets/logos/SAFHolland.svg";
 import CaterpillarLogo from "../assets/logos/caterpillar.svg";
 import ManLogo from "../assets/logos/man.svg";
 import LiebherrLogo from "../assets/logos/liebherr.svg";
@@ -16,9 +16,9 @@ import TerexLogo from "../assets/logos/terex.svg";
 
 export const brands: Brand[] = [
   {
-    name: "КамАЗ",
-    logo: KamazLogo,
-    url: "https://kamaz.ru",
+    name: "SAF",
+    logo: SAFLogo,
+    url: "https://safholland.com/int/en",
   },
   {
     name: "Volvo",
