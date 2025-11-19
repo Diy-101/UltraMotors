@@ -2,7 +2,7 @@ import type { Brand } from "../types/brand";
 import SAFLogo from "../assets/logos/SAFHolland.svg";
 import CaterpillarLogo from "../assets/logos/caterpillar.svg";
 import ManLogo from "../assets/logos/man.svg";
-import LiebherrLogo from "../assets/logos/liebherr.svg";
+import LiebherrLogo from "../assets/logos/Liebherr.svg";
 import ScaniaLogo from "../assets/logos/scania.svg";
 import VolvoLogo from "../assets/logos/volvo.svg";
 import PonsseLogo from "../assets/logos/Ponsse.svg";
