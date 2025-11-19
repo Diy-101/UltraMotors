@@ -42,37 +42,30 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // БЕЗ ОТПРАВКИ НА BACKEND
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!agreed) {
       setShowError(true);
       return;
     }
+
     setShowError(false);
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      console.log(response);
-      if (!response.ok) {
-        throw new Error("Ошибка при отправке формы");
-      }
+    // Если нужно — просто логируем данные в консоль
+    console.log("Форма отправлена (локально):", formData);
 
-      setFormData({
-        firstName: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-      setShowModal(true);
-    } catch (error) {
-      console.log("Ошибка: " + error);
-    }
+    // Сбрасываем форму
+    setFormData({
+      firstName: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+
+    // Показываем модалку об успехе
+    setShowModal(true);
   };
 
   const agreementHtml = translations[language].contactForm.agreementText
@@ -260,6 +253,7 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                 </button>
               </form>
             </div>
+
             <div className="space-y-8">
               <div>
                 <h3 className="text-xl font-bold text-blue-900 mb-4">
@@ -285,6 +279,7 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                   </div>
                 </div>
               </div>
+
               <div>
                 <h3 className="text-xl font-bold text-blue-900 mb-4">
                   {translations[language].contactForm.rightSide.contactInfo}
@@ -319,43 +314,6 @@ const ContactForm: React.FC<ContactProps> = ({ translations, language }) => {
                   </div>
                 </div>
               </div>
-              {/*<div>
-                <h3 className="text-xl font-bold text-blue-900 mb-4">
-                  {translations[language].contactForm.rightSide.connect}
-                </h3>
-                <div className="bg-white p-6 rounded-lg shadow-lg">
-                  <div className="flex justify-between px-6">
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-blue-900 transition-colors"
-                      aria-label="Facebook"
-                    >
-                      <Facebook size={20} />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-blue-900 transition-colors"
-                      aria-label="Twitter"
-                    >
-                      <Twitter size={20} />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-blue-900 transition-colors"
-                      aria-label="Instagram"
-                    >
-                      <Instagram size={20} />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-blue-900 transition-colors"
-                      aria-label="LinkedIn"
-                    >
-                      <Linkedin size={20} />
-                    </a>
-                  </div>
-                </div>
-              </div>*/}
             </div>
           </div>
         </div>
